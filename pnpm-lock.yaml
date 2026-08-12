@@ -1,0 +1,49 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@picasso/d2c-components':
+        specifier: ^0.4.7
+        version: 0.4.7(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+
+packages:
+
+  '@picasso/d2c-components@0.4.7':
+    resolution: {integrity: sha1-ncvATcviTlzMhpPXAZL0nnakkJk=, tarball: http://r.npm.sankuai.com/@picasso/d2c-components/download/@picasso/d2c-components-0.4.7.tgz}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+
+  react-dom@19.2.8:
+    resolution: {integrity: sha1-O0a57tqHfN/yzxPSdw//SuNsLsI=, tarball: http://r.npm.sankuai.com/react-dom/download/react-dom-19.2.8.tgz}
+    peerDependencies:
+      react: ^19.2.8
+
+  react@19.2.8:
+    resolution: {integrity: sha1-qAZj27WNacb+P9KR08syTop9/y0=, tarball: http://r.npm.sankuai.com/react/download/react-19.2.8.tgz}
+    engines: {node: '>=0.10.0'}
+
+  scheduler@0.27.0:
+    resolution: {integrity: sha1-DE74LWfR5cHjWej8dtOofwRf5b0=, tarball: http://r.npm.sankuai.com/scheduler/download/scheduler-0.27.0.tgz}
+
+snapshots:
+
+  '@picasso/d2c-components@0.4.7(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+    dependencies:
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+
+  react-dom@19.2.8(react@19.2.8):
+    dependencies:
+      react: 19.2.8
+      scheduler: 0.27.0
+
+  react@19.2.8: {}
+
+  scheduler@0.27.0: {}

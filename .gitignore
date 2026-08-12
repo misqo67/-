@@ -1,0 +1,4 @@
+node_modules/
+.catpaw/
+.env-ready
+.DS_Store
