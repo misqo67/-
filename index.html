@@ -379,11 +379,11 @@ body{
    ============================================================ */
 body.sheet-open{ overflow:hidden; }
 .share-modal{ position:fixed; inset:0; z-index:20; pointer-events:none; }
-.share-mask{ position:absolute; inset:0; background:rgba(17,17,17,.80); opacity:0; transition:opacity .5s ease; }
+.share-mask{ position:absolute; inset:0; background:rgba(17,17,17,.80); opacity:0; transition:opacity .35s ease; }
 .share-sheet{
 position:absolute; left:0; right:0; bottom:0; overflow-y:auto;
 background:#F7F7F7; border-radius:3.59vw 3.59vw 0 0;
-transform:translateY(105%); transition:transform .62s cubic-bezier(.22,1,.36,1);
+transform:translateY(105%); transition:transform .42s cubic-bezier(.22,1,.36,1);
 padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
 -webkit-overflow-scrolling:touch;
 }
@@ -435,34 +435,34 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
 
 /* 1. sheet-header：t=0s */
 .share-modal.is-open .share-sheet .sheet-header{
-  animation:sheetFadeUp .5s cubic-bezier(.16,1,.3,1) both;
+  animation:sheetFadeUp .35s cubic-bezier(.16,1,.3,1) both;
   animation-delay:0s;
 }
 /* 2. 分享渠道 icon：t=.10s 起，每个间隔 .04s，时长 .34s */
 .share-modal.is-open .share-sheet .share-action{
-  animation:channelFadeUp .42s cubic-bezier(.16,1,.3,1) both;
+  animation:channelFadeUp .3s cubic-bezier(.16,1,.3,1) both;
 }
-.share-modal.is-open .share-sheet .share-action:nth-child(1){ animation-delay:.10s; }
-.share-modal.is-open .share-sheet .share-action:nth-child(2){ animation-delay:.14s; }
-.share-modal.is-open .share-sheet .share-action:nth-child(3){ animation-delay:.18s; }
-.share-modal.is-open .share-sheet .share-action:nth-child(4){ animation-delay:.22s; }
-.share-modal.is-open .share-sheet .share-action:nth-child(5){ animation-delay:.26s; }
-.share-modal.is-open .share-sheet .share-action:nth-child(6){ animation-delay:.30s; }
+.share-modal.is-open .share-sheet .share-action:nth-child(1){ animation-delay:.06s; }
+.share-modal.is-open .share-sheet .share-action:nth-child(2){ animation-delay:.09s; }
+.share-modal.is-open .share-sheet .share-action:nth-child(3){ animation-delay:.12s; }
+.share-modal.is-open .share-sheet .share-action:nth-child(4){ animation-delay:.15s; }
+.share-modal.is-open .share-sheet .share-action:nth-child(5){ animation-delay:.18s; }
+.share-modal.is-open .share-sheet .share-action:nth-child(6){ animation-delay:.21s; }
 /* 3. share-image-title：t=.18s */
 .share-modal.is-open .share-sheet .share-image-title{
-  animation:sheetFadeUp .5s cubic-bezier(.16,1,.3,1) both;
-  animation-delay:.18s;
+  animation:sheetFadeUp .35s cubic-bezier(.16,1,.3,1) both;
+  animation-delay:.12s;
 }
 /* 4. 分享图缩略图：t=.25s 起，每个间隔 .045s，时长 .42s */
 .share-modal.is-open .share-sheet .share-template{
-  animation:thumbFadeUp .5s cubic-bezier(.16,1,.3,1) both;
+  animation:thumbFadeUp .35s cubic-bezier(.16,1,.3,1) both;
 }
-.share-modal.is-open .share-sheet .share-template:nth-child(1){ animation-delay:.25s; }
-.share-modal.is-open .share-sheet .share-template:nth-child(2){ animation-delay:.295s; }
-.share-modal.is-open .share-sheet .share-template:nth-child(3){ animation-delay:.34s; }
-.share-modal.is-open .share-sheet .share-template:nth-child(4){ animation-delay:.385s; }
-.share-modal.is-open .share-sheet .share-template:nth-child(5){ animation-delay:.43s; }
-.share-modal.is-open .share-sheet .share-template:nth-child(6){ animation-delay:.475s; }
+.share-modal.is-open .share-sheet .share-template:nth-child(1){ animation-delay:.16s; }
+.share-modal.is-open .share-sheet .share-template:nth-child(2){ animation-delay:.19s; }
+.share-modal.is-open .share-sheet .share-template:nth-child(3){ animation-delay:.22s; }
+.share-modal.is-open .share-sheet .share-template:nth-child(4){ animation-delay:.25s; }
+.share-modal.is-open .share-sheet .share-template:nth-child(5){ animation-delay:.28s; }
+.share-modal.is-open .share-sheet .share-template:nth-child(6){ animation-delay:.31s; }
 /* 5. sheet-toast：最后，不参与入场（由 .show 控制） */
 .sheet-header{ display:flex; align-items:center; justify-content:space-between; }
 .sheet-title{ font-size:4.62vw; line-height:6.67vw; font-weight:500; color:#111111; }
@@ -506,12 +506,12 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
 .preview-track{position:absolute;top:33.59vw;left:0;display:flex;height:113.85vw;transition:transform .35s cubic-bezier(.25,.1,.25,1);will-change:transform}
 
 /* 单张卡片 */
-.poster-slide{flex:none;width:76.92vw;margin:0 3.08vw;transition:transform .35s cubic-bezier(.25,.1,.25,1);transform:scale(0.9);transform-origin:center center}
+.poster-slide{flex:none;width:76.92vw;margin:0 3.08vw;transition:transform .35s cubic-bezier(.25,.1,.25,1);transform:scale(0.9);transform-origin:center center;border-radius:3.08vw;overflow:hidden;box-shadow:0 2.05vw 8.21vw rgba(0,0,0,.28)}
 .poster-slide.is-active{transform:scale(1)}
 .poster-slide.peek-left{transform:scale(.9) translateX(6.93vw)}
 .poster-slide.peek-right{transform:scale(.9) translateX(-6.93vw)}
 
-.poster-card{display:block;width:100%;height:100%;object-fit:contain;overflow:hidden;border-radius:3.08vw;background:#F3F3F3;box-shadow:0 2.05vw 8.21vw rgba(0,0,0,.28)}
+.poster-card{display:block;width:100%;height:100%;object-fit:cover}
 
 /* 指示器（圆点） */
 .preview-dots{position:absolute;top:calc(33.59vw + 113.85vw + 4.10vw);left:0;right:0;display:flex;justify-content:center;gap:1.28vw}
@@ -776,9 +776,9 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
 <button class="share-template" type="button" data-template="评价成就"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786444381742-container-435999.png.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">评价成就</span></button>
 <button class="share-template" type="button" data-template="展示品味"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786451403317-container-435945.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">展示品味</span></button>
 <button class="share-template" type="button" data-template="共同回忆"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786444413595-container-435999-3.png.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">共同回忆</span></button>
-<button class="share-template" type="button" data-template="展示品味-2"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786444428893-monthly-highlight.png.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">展示品味</span></button>
+<button class="share-template" type="button" data-template="展示品味-2"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786536925928-container-435995.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">展示品味</span></button>
 <button class="share-template" type="button" data-template="每日Plog"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786444411730-share-card-2.png.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">每日Plog</span></button>
-<button class="share-template" type="button" data-template="有故事的餐厅"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786451520106-container-435995.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">有故事的餐厅</span></button>
+<button class="share-template" type="button" data-template="有故事的餐厅"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786536635553-black-pearl-ing.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">有故事的餐厅</span></button>
     </div>
     <p class="sheet-toast" id="sheet-toast" role="status" aria-live="polite"></p>
   </section>
@@ -789,9 +789,9 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
 <article class="poster-slide" data-template="评价成就"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786444381742-container-435999.png.webp" alt="评价成就分享图"></article>
 <article class="poster-slide" data-template="展示品味"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786451403317-container-435945.jpg.webp" alt="展示品味分享图"></article>
 <article class="poster-slide" data-template="共同回忆"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786444413595-container-435999-3.png.webp" alt="共同回忆分享图"></article>
-<article class="poster-slide" data-template="展示品味-2"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786444428893-monthly-highlight.png.webp" alt="展示品味分享图"></article>
+<article class="poster-slide" data-template="展示品味-2"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786536925928-container-435995.jpg.webp" alt="展示品味分享图"></article>
 <article class="poster-slide" data-template="每日Plog"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786444411730-share-card-2.png.webp" alt="每日Plog 分享图"></article>
-<article class="poster-slide" data-template="有故事的餐厅"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786451520106-container-435995.jpg.webp" alt="有故事的餐厅分享图"></article>
+<article class="poster-slide" data-template="有故事的餐厅"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786536635553-black-pearl-ing.jpg.webp" alt="有故事的餐厅分享图"></article>
   </div></div>
   <div class="preview-dots" id="preview-dots"></div>
   <div class="preview-actions">
