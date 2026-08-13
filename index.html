@@ -461,6 +461,7 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
 .share-modal.is-open .share-sheet .share-template:nth-child(2){ animation-delay:.19s; }
 .share-modal.is-open .share-sheet .share-template:nth-child(3){ animation-delay:.22s; }
 .share-modal.is-open .share-sheet .share-template:nth-child(4){ animation-delay:.25s; }
+.share-modal.is-open .share-sheet .share-template:nth-child(5){ animation-delay:.28s; }
 /* 5. sheet-toast：最后，不参与入场（由 .show 控制） */
 .sheet-header{ display:flex; align-items:center; justify-content:space-between; }
 .sheet-title{ font-size:4.62vw; line-height:6.67vw; font-weight:500; color:#111111; }
@@ -773,8 +774,9 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
     <div class="share-grid" aria-label="分享图模板">
 <button class="share-template" type="button" data-template="共同回忆"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630292404-shared-memory-1.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">共同回忆</span></button>
 <button class="share-template" type="button" data-template="黑珍珠"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630293659-black-pearl-ing.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">黑珍珠</span></button>
-<button class="share-template" type="button" data-template="漂亮饭"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630299245-pretty-food-ing.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">漂亮饭</span></button>
+<button class="share-template" type="button" data-template="展示品味"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630295346-time-honored.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">展示品味</span></button>
 <button class="share-template" type="button" data-template="评价成就"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630300540-container-436186.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">评价成就</span></button>
+<button class="share-template" type="button" data-template="共同回忆-2"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630676855-hotpot.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">共同回忆</span></button>
     </div>
     <p class="sheet-toast" id="sheet-toast" role="status" aria-live="polite"></p>
   </section>
@@ -784,8 +786,9 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
   <div class="preview-stage"><div class="preview-track" id="preview-track" aria-label="左右滑动切换分享图">
 <article class="poster-slide" data-template="共同回忆"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630292404-shared-memory-1.jpg.webp" alt="共同回忆分享图"></article>
 <article class="poster-slide" data-template="黑珍珠"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630293659-black-pearl-ing.jpg.webp" alt="黑珍珠分享图"></article>
-<article class="poster-slide" data-template="漂亮饭"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630299245-pretty-food-ing.jpg.webp" alt="漂亮饭分享图"></article>
+<article class="poster-slide" data-template="展示品味"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630295346-time-honored.jpg.webp" alt="展示品味分享图"></article>
 <article class="poster-slide" data-template="评价成就"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630300540-container-436186.jpg.webp" alt="评价成就分享图"></article>
+<article class="poster-slide" data-template="共同回忆-2"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630676855-hotpot.jpg.webp" alt="共同回忆分享图"></article>
   </div></div>
   <div class="preview-dots" id="preview-dots"></div>
   <div class="preview-actions">
