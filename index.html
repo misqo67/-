@@ -771,24 +771,24 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
       <button class="share-action" type="button" data-channel="QQ空间"><img class="share-icon" src="https://p0.meituan.net/trafficpublic/1786440983905-qq-zone-icon.png.webp" alt="" aria-hidden="true"><span class="share-action-label">QQ空间</span></button>
     </div>
     <h3 class="share-image-title">生成分享图</h3>
-    <div class="share-grid" aria-label="分享图模板">
-<button class="share-template" type="button" data-template="共同回忆"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630292404-shared-memory-1.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">共同回忆</span></button>
-<button class="share-template" type="button" data-template="黑珍珠"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630293659-black-pearl-ing.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">黑珍珠</span></button>
-<button class="share-template" type="button" data-template="展示品味"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630295346-time-honored.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">展示品味</span></button>
+<div class="share-grid" aria-label="分享图模板">
 <button class="share-template" type="button" data-template="评价成就"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630300540-container-436186.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">评价成就</span></button>
+<button class="share-template" type="button" data-template="共同回忆"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630292404-shared-memory-1.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">共同回忆</span></button>
 <button class="share-template" type="button" data-template="共同回忆-2"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630676855-hotpot.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">共同回忆</span></button>
-    </div>
+<button class="share-template" type="button" data-template="黑珍珠"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630293659-black-pearl-ing.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">黑珍珠</span></button>
+<button class="share-template" type="button" data-template="老字号"><img class="share-image" src="https://p0.meituan.net/trafficpublic/1786630295346-time-honored.jpg.webp" alt="" aria-hidden="true" loading="lazy"><span class="share-template-name">老字号</span></button>
+</div>
     <p class="sheet-toast" id="sheet-toast" role="status" aria-live="polite"></p>
   </section>
 </div>
 
 <div class="preview-modal" id="preview-modal" aria-hidden="true">
   <div class="preview-stage"><div class="preview-track" id="preview-track" aria-label="左右滑动切换分享图">
-<article class="poster-slide" data-template="共同回忆"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630292404-shared-memory-1.jpg.webp" alt="共同回忆分享图"></article>
-<article class="poster-slide" data-template="黑珍珠"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630293659-black-pearl-ing.jpg.webp" alt="黑珍珠分享图"></article>
-<article class="poster-slide" data-template="展示品味"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630295346-time-honored.jpg.webp" alt="展示品味分享图"></article>
 <article class="poster-slide" data-template="评价成就"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630300540-container-436186.jpg.webp" alt="评价成就分享图"></article>
+<article class="poster-slide" data-template="共同回忆"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630292404-shared-memory-1.jpg.webp" alt="共同回忆分享图"></article>
 <article class="poster-slide" data-template="共同回忆-2"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630676855-hotpot.jpg.webp" alt="共同回忆分享图"></article>
+<article class="poster-slide" data-template="黑珍珠"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630293659-black-pearl-ing.jpg.webp" alt="黑珍珠分享图"></article>
+<article class="poster-slide" data-template="老字号"><img class="poster-card" src="https://p0.meituan.net/trafficpublic/1786630295346-time-honored.jpg.webp" alt="老字号分享图"></article>
   </div></div>
   <div class="preview-dots" id="preview-dots"></div>
   <div class="preview-actions">
@@ -949,7 +949,7 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
     if (!instant && (goLock || heroAnimating)) return;
     if (!instant && idx !== curIdx) {
       goLock = true;
-      setTimeout(() => { goLock = false; }, 420);
+      setTimeout(() => { goLock = false; }, 300);
     }
     curIdx = idx;
     if (instant) {
@@ -973,23 +973,60 @@ padding:4.10vw 3.08vw calc(5.13vw + env(safe-area-inset-bottom));
 
   const showPreviewToast = (text) => { clearTimeout(previewToastTimer); previewToast.textContent = text; previewToast.classList.add('show'); previewToastTimer = setTimeout(() => previewToast.classList.remove('show'), 1500); };
 
-  // 触摸/拖拽：一次只滑一张
-  let touchX0 = 0, touchY0 = 0, dragging = false, locked = false;
-  previewStage.addEventListener('touchstart', (e) => { touchX0 = e.touches[0].clientX; touchY0 = e.touches[0].clientY; dragging = true; locked = false; }, { passive: true });
+  // 触摸/拖拽：实时跟手 + 速度检测
+  let touchX0 = 0, touchY0 = 0, touchT0 = 0, dragging = false, locked = false;
+  let lastMoveX = 0, lastMoveT = 0;
+  const trackTransition = 'transform .35s cubic-bezier(.25,.1,.25,1)';
+  previewStage.addEventListener('touchstart', (e) => {
+    touchX0 = e.touches[0].clientX;
+    touchY0 = e.touches[0].clientY;
+    touchT0 = Date.now();
+    lastMoveX = touchX0;
+    lastMoveT = touchT0;
+    dragging = true; locked = false;
+    previewTrack.style.transition = 'none';
+  }, { passive: true });
   previewStage.addEventListener('touchmove', (e) => {
     if (!dragging) return;
-    const dx = e.touches[0].clientX - touchX0;
-    const dy = e.touches[0].clientY - touchY0;
-    if (!locked) { if (Math.abs(dx) > Math.abs(dy)) locked = true; else { dragging = false; return; } }
-  }, { passive: true });
+    const x = e.touches[0].clientX;
+    const y = e.touches[0].clientY;
+    const dx = x - touchX0;
+    const dy = y - touchY0;
+    if (!locked) {
+      if (Math.abs(dx) > Math.abs(dy)) locked = true;
+      else { dragging = false; previewTrack.style.transition = ''; return; }
+    }
+    if (locked) {
+      e.preventDefault();
+      lastMoveX = x;
+      lastMoveT = Date.now();
+      let offset = dx;
+      if ((curIdx === 0 && dx > 0) || (curIdx === slideCount - 1 && dx < 0)) offset = dx * 0.3;
+      previewTrack.style.transform = 'translateX(' + (getTrackX(curIdx) + offset) + 'px)';
+    }
+  }, { passive: false });
   previewStage.addEventListener('touchend', (e) => {
-    if (!dragging || !locked) { dragging = false; return; }
-    const dx = e.changedTouches[0].clientX - touchX0;
-    const threshold = window.innerWidth * 0.15;
-    if (dx < -threshold) goTo(Math.min(curIdx + 1, slideCount - 1));
-    else if (dx > threshold) goTo(Math.max(curIdx - 1, 0));
-    else goTo(curIdx);
+    if (!dragging || !locked) { dragging = false; previewTrack.style.transition = ''; return; }
+    const x = e.changedTouches[0].clientX;
+    const dx = x - touchX0;
+    const now = Date.now();
+    const dt = now - lastMoveT;
+    const velocity = dt > 0 ? (x - lastMoveX) / dt : 0;
+    previewTrack.style.transition = '';
+    const threshold = window.innerWidth * 0.08;
+    const flickVel = 0.25;
+    let target = curIdx;
+    if (velocity > flickVel || dx > threshold) target = Math.max(curIdx - 1, 0);
+    else if (velocity < -flickVel || dx < -threshold) target = Math.min(curIdx + 1, slideCount - 1);
     dragging = false;
+    locked = false;
+    goTo(target);
+  });
+  // touchcancel 也要恢复 transition
+  previewStage.addEventListener('touchcancel', () => {
+    dragging = false; locked = false;
+    previewTrack.style.transition = '';
+    previewTrack.style.transform = 'translateX(' + getTrackX(curIdx) + 'px)';
   });
 
   // 鼠标拖拽：按住左右拖动切换（桌面端）
